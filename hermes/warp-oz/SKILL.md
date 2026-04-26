@@ -1,8 +1,8 @@
 ---
 name: warp-oz
-description: Delegate coding tasks to Warp's Oz CLI agent for feature implementation, refactoring, PR review, and cloud execution. Requires the oz CLI installed and authenticated.
-version: 3.2.0
-author: Hermes Agent
+description: Orchestrate Warp's Oz CLI as an autonomous coding agent — local and cloud execution, scheduling, REST API, MCP integration, and background monitoring.
+version: 1.0.0
+author: Dascoba
 license: MIT
 homepage: https://github.com/dbardi/agent-skills/tree/main/hermes/warp-oz
 metadata:

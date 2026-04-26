@@ -2,7 +2,7 @@
 name: warp-oz
 description: Orchestrate Warp's Oz CLI as an autonomous coding agent — local and cloud execution, scheduling, REST API, MCP integration, and background monitoring.
 version: 1.0.0
-author: Community
+author: Dascoba
 license: MIT
 homepage: https://github.com/dbardi/agent-skills/tree/main/openclaw/warp-oz
 metadata:
