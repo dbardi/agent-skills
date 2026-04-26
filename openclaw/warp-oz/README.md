@@ -4,15 +4,13 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-green)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
-A comprehensive skill for orchestrating [Warp Oz](https://docs.warp.dev/reference/cli/cli) as an autonomous coding agent — local or cloud execution, scheduling, API control, MCP integration, and background monitoring.
-
-Available on [ClawHub](https://clawhub.ai).
+Orchestrate [Warp Oz](https://docs.warp.dev/reference/cli/cli) as an autonomous coding agent — local and cloud execution, scheduling, REST API, MCP integration, and background monitoring.
 
 ## Features
 
 - **Local agent runs** — bounded one-shot tasks with `oz agent run`
 - **Cloud agent runs** — isolated execution on Warp's infrastructure
-- **Background monitoring** — API polling for non-streaming CLI
+- **Background monitoring** — non-streaming CLI with API polling or agent notification patterns
 - **Parallel work** — multiple independent Oz tasks simultaneously
 - **Scheduled agents** — recurring cron-based tasks via `oz schedule`
 - **REST API** — programmatic control when CLI isn't sufficient
@@ -36,9 +34,6 @@ oz agent run --prompt "Add retry logic to API calls" --cwd /path/to/project
 
 # Cloud run
 oz agent run-cloud --environment ENV_ID --prompt "Fix auth bug"
-
-# Monitor via API
-curl -s "https://app.warp.dev/api/v1/agent/runs/$RUN_ID" -H "Authorization: Bearer $WARP_API_KEY"
 ```
 
 ## Platforms
@@ -50,25 +45,6 @@ curl -s "https://app.warp.dev/api/v1/agent/runs/$RUN_ID" -H "Authorization: Bear
 | Linux (Debian/Ubuntu) | See SKILL.md for repo setup |
 | Linux (RHEL/Fedora) | `sudo rpm --import https://releases.warp.dev/linux/keys/warp.asc && sudo dnf install oz-stable` |
 | Linux (Arch) | `sudo pacman -Sy oz-stable` |
-
-## External Endpoints
-
-This skill communicates exclusively with Warp's API:
-
-| Endpoint | Purpose |
-|----------|---------|
-| `https://app.warp.dev/api/v1/agent/runs` | Create/poll agent runs |
-| `https://app.warp.dev/api/v1/agent/models` | List models |
-| `https://app.warp.dev/api/v1/agent/runs/{runId}/cancel` | Cancel runs |
-
-No data is sent to any third party beyond Warp's API.
-
-## Security & Privacy
-
-- Task prompts and code are sent to Warp.dev for LLM processing
-- `WARP_API_KEY` stored in environment variables — never hardcoded
-- Cloud runs execute on Warp's infrastructure
-- Review Warp's privacy policy: https://warp.dev/privacy
 
 ## License
 

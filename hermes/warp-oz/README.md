@@ -1,36 +1,21 @@
 # 🚀 Warp Oz Skill
 
 ![Skill](https://img.shields.io/badge/skill-warp__oz-blue)
-![Version](https://img.shields.io/badge/version-3.2.0-green)
+![Version](https://img.shields.io/badge/version-1.0.0-green)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
-A comprehensive skill for orchestrating [Warp Oz](https://docs.warp.dev/reference/cli/cli) as an autonomous coding agent — local or cloud execution, scheduling, API control, MCP integration, and background monitoring.
-
-Built for [Hermes Agent](https://github.com/NousResearch/hermes-agent).
+Orchestrate [Warp Oz](https://docs.warp.dev/reference/cli/cli) as an autonomous coding agent — local and cloud execution, scheduling, REST API, MCP integration, and background monitoring.
 
 ## Features
 
 - **Local agent runs** — bounded one-shot tasks with `oz agent run`
 - **Cloud agent runs** — isolated execution on Warp's infrastructure
-- **Background monitoring** — `notify_on_complete` + `watch_patterns` for non-streaming CLI
+- **Background monitoring** — non-streaming CLI with API polling or agent notification patterns
 - **Parallel work** — multiple independent Oz tasks simultaneously
 - **Scheduled agents** — recurring cron-based tasks via `oz schedule`
 - **REST API** — programmatic control when CLI isn't sufficient
 - **MCP integration** — connect Oz to external tools (GitHub, Linear, etc.)
 - **Skills as agents** — reusable instruction sets for agent behavior
-
-## Installation
-
-```bash
-hermes skills install dbardi/agent-skills/hermes/warp-oz
-```
-
-Or manually:
-
-```bash
-git clone https://github.com/dbardi/agent-skills.git
-cp -r agent-skills/hermes/warp-oz ~/.hermes/skills/autonomous-ai-agents/warp-oz
-```
 
 ## Prerequisites
 
@@ -47,8 +32,8 @@ oz whoami
 # One-shot local task
 oz agent run --prompt "Add retry logic to API calls" --cwd /path/to/project
 
-# Cloud run with notification (Hermes)
-terminal(command="oz agent run-cloud --environment ENV_ID --prompt 'Fix auth bug'", background=true, notify_on_complete=true)
+# Cloud run
+oz agent run-cloud --environment ENV_ID --prompt "Fix auth bug"
 ```
 
 ## Platforms
