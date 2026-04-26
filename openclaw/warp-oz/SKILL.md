@@ -11,7 +11,6 @@ metadata:
     requires:
       env: ["WARP_API_KEY"]
     primaryEnv: "WARP_API_KEY"
-    files: ["references/mcp-config-example.json"]
 ---
 
 # Warp Oz CLI
@@ -335,6 +334,4 @@ All API calls use Bearer token auth via `WARP_API_KEY`. No data is sent to any t
 
 By using this skill, your prompts and code are sent to Warp.dev's API for processing. Only install if you trust Warp. Cloud runs execute your code on Warp's infrastructure. Review Warp's privacy policy at https://warp.dev/privacy.
 
-## Companion Files
 
-- `references/mcp-config-example.json` — Sample MCP server configuration for GitHub, Linear, and custom servers

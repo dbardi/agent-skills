@@ -339,6 +339,4 @@ Success criteria:
 6. Report concrete outcomes (files changed, test results, remaining risks).
 7. For recurring work, use `oz schedule create` instead of manual cron wrappers.
 
-## Companion Files
 
-- `references/mcp-config-example.json` — Sample MCP server configuration for GitHub, Linear, and custom servers
