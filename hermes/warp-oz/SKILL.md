@@ -9,12 +9,6 @@ metadata:
   hermes:
     tags: [Coding-Agent, Warp, Oz, Autonomous, Refactoring, Cloud-Agent, Scheduling]
     related_skills: [opencode, claude-code, codex]
-  clawdbot:
-    emoji: "🚀"
-    requires:
-      env: ["WARP_API_KEY"]
-    primaryEnv: "WARP_API_KEY"
-    files: ["references/mcp-config-example.json"]
 ---
 
 # Warp Oz CLI
@@ -344,29 +338,6 @@ Success criteria:
 5. Cancel remote runs via API, not by killing the CLI process.
 6. Report concrete outcomes (files changed, test results, remaining risks).
 7. For recurring work, use `oz schedule create` instead of manual cron wrappers.
-
-## External Endpoints
-
-| Endpoint | Method | Data Sent | Purpose |
-|----------|--------|-----------|---------|
-| `https://app.warp.dev/api/v1/agent/runs` | POST | Prompt, model, environment config | Create agent runs |
-| `https://app.warp.dev/api/v1/agent/runs/{runId}` | GET | API key (Bearer header) | Poll run status |
-| `https://app.warp.dev/api/v1/agent/runs/{runId}/cancel` | POST | API key (Bearer header) | Cancel a run |
-| `https://app.warp.dev/api/v1/agent/models` | GET | API key (Bearer header) | List available models |
-| `https://app.warp.dev/api/v1/agent/runs` | GET | API key (Bearer header) | List past runs |
-
-All API calls use Bearer token auth via `WARP_API_KEY`. No data is sent to any third party beyond Warp's API.
-
-## Security & Privacy
-
-- **What leaves the machine:** Task prompts, file contents (via `--attach`), and repo code (via cloud environments) are sent to Warp's API for processing by LLM models.
-- **What stays local:** Local `oz agent run` executes on your machine. No telemetry or usage data is sent beyond the API calls shown above.
-- **Credential handling:** `WARP_API_KEY` is stored in environment variables or Hermes secrets — never hardcoded in skill files.
-- **Cloud environments:** Repo code and environment secrets are accessible to the cloud agent during execution. Ensure environment secrets are scoped appropriately.
-
-### Trust Statement
-
-By using this skill, your prompts and code are sent to Warp.dev's API for processing. Only install if you trust Warp. Cloud runs execute your code on Warp's infrastructure. Review Warp's privacy policy at https://warp.dev/privacy.
 
 ## Companion Files
 

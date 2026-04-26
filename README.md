@@ -1,14 +1,15 @@
 # Agent Skills
 
-A collection of agent skills for [Hermes](https://github.com/NousResearch/hermes-agent), [ClawHub](https://clawhub.ai), and other AI agent platforms.
+A collection of agent skills for multiple AI agent platforms.
 
 ## Structure
 
 ```
 agent-skills/
 ├── hermes/          # Skills for Hermes Agent
-│   └── warp-oz/     # Warp Oz CLI orchestration
-└── openclaw/        # Skills for OpenClaw
+│   └── warp-oz/     # Warp Oz CLI orchestration (Hermes-native patterns)
+└── openclaw/        # Skills for OpenClaw / ClawHub
+    └── warp-oz/     # Warp Oz CLI orchestration (generic patterns)
 ```
 
 ## Install
@@ -19,7 +20,7 @@ agent-skills/
 hermes skills install dbardi/agent-skills/hermes/warp-oz
 ```
 
-### Manual
+Or manually:
 
 ```bash
 git clone https://github.com/dbardi/agent-skills.git
@@ -36,7 +37,13 @@ Available on the [ClawHub marketplace](https://clawhub.ai).
 
 | Skill | Description | Version |
 |-------|-------------|---------|
-| [warp-oz](hermes/warp-oz/) | Orchestrate Warp Oz as an autonomous coding agent | 3.2.0 |
+| [warp-oz](hermes/warp-oz/) | Orchestrate Warp Oz as an autonomous coding agent (Hermes-native) | 3.2.0 |
+
+### OpenClaw / ClawHub
+
+| Skill | Description | Version |
+|-------|-------------|---------|
+| [warp-oz](openclaw/warp-oz/) | Orchestrate Warp Oz as an autonomous coding agent (generic) | 1.0.0 |
 
 ## License
 
