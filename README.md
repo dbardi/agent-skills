@@ -7,7 +7,8 @@ A collection of agent skills for multiple AI agent platforms.
 ```
 agent-skills/
 ├── hermes/          # Skills for Hermes Agent
-│   └── warp-oz/     # Warp Oz CLI orchestration (Hermes-native patterns)
+│   ├── hermes-tweet/ # X/Twitter automation through Hermes Tweet
+│   └── warp-oz/      # Warp Oz CLI orchestration (Hermes-native patterns)
 └── openclaw/        # Skills for OpenClaw / ClawHub
     └── warp-oz/     # Warp Oz CLI orchestration (generic patterns)
 ```
@@ -17,6 +18,7 @@ agent-skills/
 ### Hermes
 
 ```bash
+hermes skills install dbardi/agent-skills/hermes/hermes-tweet
 hermes skills install dbardi/agent-skills/hermes/warp-oz
 ```
 
@@ -37,6 +39,7 @@ Available on the [ClawHub marketplace](https://clawhub.ai).
 
 | Skill | Description | Version |
 |-------|-------------|---------|
+| [hermes-tweet](hermes/hermes-tweet/) | Search tweets, read replies, monitor X trends, and run approval-gated X actions through Hermes Tweet | 1.0.0 |
 | [warp-oz](hermes/warp-oz/) | Orchestrate Warp Oz as an autonomous coding agent (Hermes-native) | 3.2.0 |
 
 ### OpenClaw / ClawHub
